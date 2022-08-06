@@ -6,6 +6,8 @@ public class KillBall : MonoBehaviour
 {
     public void OnCollisionEnter(Collision other) 
     {
-        other.gameObject.GetComponent<BallControl>().resetBall();
+        if (other.gameObject.tag == "Player") {
+            other.gameObject.GetComponent<BallControl>().resetBall();
+        }
     }
 }
